@@ -1,29 +1,11 @@
-# tft-tracker
+1) Better spacing/alignment
 
-## Project setup
-```
-npm install
-```
+2) Render Side Menu on App.js with bool (put in store.js) to show/hide depending on which route/component rendered
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+3) In chanceCalculator.vue, add option to record true value of a particular champion
 
-### Compiles and minifies for production
-```
-npm run build
-```
+4) Add firebase root collection that will eventually contain each champion percentage, stored in {[]} form as to be translated to chart form
 
-### Run your tests
-```
-npm run test
-```
+5) In chanceCalculator.vue, whenever calculate button is called, store worst and best case values in appropriate firebase champion chance collection
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+6) In chanceCalculator.vue, whenever true value button is called, store true value in appropriate firebase champion chance collection
