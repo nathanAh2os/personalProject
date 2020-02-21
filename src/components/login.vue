@@ -1,19 +1,5 @@
 <template>
   <v-container>
-    <v-app-bar app color="primary" dark>
-      <v-img
-        alt="Vuetify Logo"
-        class="shrink mr-2"
-        contain
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-        transition="scale-transition"
-        width="40"
-      />
-      <v-row>
-        <h1 class="display-1 font-weight-bold ml-4 mt-2">TFT Tracker</h1>
-        <p class="headerOne ml-4 mt-6">By Nathan Antler Watters</p>
-      </v-row>
-    </v-app-bar>
     <div class="mt-12">
       <v-row class="text-center">
         <v-col cols="4"></v-col>
@@ -50,6 +36,7 @@
 <script>
 import firebase from "firebase/app";
 //import fb from "@/firebase/initFirebase";
+import { store } from "../store";
 
 export default {
   name: "login",
@@ -69,8 +56,7 @@ export default {
     };
   },
   created() {
-    console.log("created lifecycle!");
-    //Temporary until I add a signout option in the homepage
+    store.state.showSignOut = false;
   },
   methods: {
     authenticateLogin() {
@@ -79,8 +65,8 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(currentUser => {
-          currentUser = firebase.auth().currentUser;
-          this.currentUser = currentUser;
+          currentUser = this.username;
+          store.state.currentUser = currentUser;
           console.log("Successfully authenticated user!");
           this.$router.push("homepage");
         })
@@ -90,25 +76,11 @@ export default {
           this.snackbar.show = true;
           this.snackbar.color = "red";
           this.snackbar.text =
-            "Wrong Email, password, or connection stopped. Authentication failed!.";
+            "Wrong email format, password, or connection stopped. Authentication failed!.";
         });
     },
     createNewAccount() {
       this.$router.push("newAccount");
-    },
-    signOut() {
-      firebase
-        .auth()
-        .signOut()
-        .then(function() {
-          // Sign-out successful.
-          this.$router.push("login");
-        })
-        .catch(error => {
-          // An error happened.
-          console.log(error.code);
-          console.log(error.message);
-        });
     }
   }
 };

@@ -1,45 +1,32 @@
 <template>
   <v-container>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-        <v-btn></v-btn>
-        <v-btn></v-btn>
-        <v-btn></v-btn>
-        <v-btn></v-btn>
-      </div>
-    </v-app-bar>
-    <v-row class="text-center">
-      <h1 class="display-1 font-weight-bold">Welcome, {{}}</h1>
-    </v-row>
-
+    <div>
+      <v-row class="mt-12 ml-n12">
+        <v-col cols="3">
+          <v-list rounded>
+            <!-- <v-subheader>OPTIONS</v-subheader> -->
+            <v-list-item-group color="primary">
+              <v-list-item color="primary" @click="routeChanceCalculator">
+                <v-icon>mdi-calculator</v-icon>Champ Reroll Chances
+              </v-list-item>
+              <v-list-item>
+                <v-icon>mdi-hammer-wrench</v-icon>Under Construction
+              </v-list-item>
+              <v-list-item>
+                <v-icon>mdi-hammer-wrench</v-icon>Under Construction
+              </v-list-item>
+              <v-list-item>
+                <v-icon>mdi-hammer-wrench</v-icon>Under Construction
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+        </v-col>
+      </v-row>
+    </div>
     <v-row class="text-center">
       <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">Welcome, {{}}</h1>
+        <h1 class="display-2 font-weight-bold mb-3">Welcome, {{currentUser}}</h1>
       </v-col>
-    </v-row>
-
-    <v-row class="text-center">
-      <v-col cols="4"></v-col>
-      <v-col cols="4">
-        <v-row class="text-center">
-          <h1 class="display-2 font-weight-bold mb-3">Game History (placement, compositions, )</h1>
-        </v-row>
-        <v-row class="text-center">
-          <h1 class="display-2 font-weight-bold mb-3">Economy/Gold Tracker</h1>
-        </v-row>
-        <v-row class="text-center">
-          <h1 class="display-2 font-weight-bold mb-3">Level/Xp Levels</h1>
-        </v-row>
-      </v-col>
-      <v-col cols="4"></v-col>
     </v-row>
     <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="snackbar.timeout">
       {{ snackbar.text }}
@@ -51,6 +38,7 @@
 <script>
 //import firebase from "firebase/app";
 //import fb from "@/firebase/initFirebase";
+import { store } from "../store";
 
 export default {
   name: "homepage",
@@ -64,6 +52,22 @@ export default {
         timeout: 5000
       }
     };
+  },
+  created() {
+    store.state.showSignOut = true;
+  },
+  computed: {
+    currentUser: function() {
+      return store.state.currentUser;
+    }
+  },
+  methods: {
+    routeChanceCalculator() {
+      this.$router.push("chanceCalculator");
+    }
   }
 };
 </script>
+
+<style scoped>
+</style>
