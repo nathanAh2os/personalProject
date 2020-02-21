@@ -1,3 +1,4 @@
+NOTE -- ./src is where you will find most of my written code, at least for now...
 1) Better spacing/alignment
 
 2) Render Side Menu on App.js with bool (put in store.js) to show/hide depending on which route/component rendered
