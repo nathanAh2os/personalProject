@@ -14,26 +14,6 @@
       </v-row>
     </v-app-bar>
     <v-row class="mt-12">
-      <v-col cols="4">
-        <v-list class="sideMenu" rounded>
-          <!-- <v-subheader>OPTIONS</v-subheader> -->
-          <v-list-item-group>
-            <v-list-item>
-              <v-icon>mdi-calculator</v-icon>Champion Reroll Chances
-            </v-list-item>
-            <v-list-item>
-              <v-icon>mdi-hammer-wrench</v-icon>Under Construction
-            </v-list-item>
-            <v-list-item>
-              <v-icon>mdi-hammer-wrench</v-icon>Under Construction
-            </v-list-item>
-            <v-list-item>
-              <v-icon>mdi-hammer-wrench</v-icon>Under Construction
-            </v-list-item>
-          </v-list-item-group>
-        </v-list>
-      </v-col>
-
       <v-col>
         <v-row>
           <h1 class="display-1 font-weight-bold">Champion Chance Calculator*</h1>
@@ -119,7 +99,10 @@ export default {
         color: "",
         timeout: 5000
       },
-      chartData: [["Games", "Best Case", "Worst Case", "True Value"], ["0", 0, 0, 0]],
+      chartData: [
+        ["Games", "Best Case", "Worst Case", "True Value"],
+        ["0", 0, 0, 0]
+      ],
       chartOptions: {
         chart: {
           title: "Champion Chances Performance",
@@ -353,6 +336,9 @@ export default {
       this.numberOfRollsWC = Math.round(100 / this.championChanceWC);
       this.initialCalculationsDone = true;
       var index = this.chartData.length;
+      /* 
+      function hackNate'sComputer(var virus) {
+      } */
 
       //Push information to graph
       this.chartData.push([
@@ -375,7 +361,12 @@ export default {
 
       //Remove and re-add the data with the true value now included
       this.chartData.pop();
-      this.chartData.push([1, this.championChanceBC, this.championChanceWC, this.championChanceTrue]); 
+      this.chartData.push([
+        1,
+        this.championChanceBC,
+        this.championChanceWC,
+        this.championChanceTrue
+      ]);
     }
   }
 };

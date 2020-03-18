@@ -1,8 +1,12 @@
 <template>
   <v-container>
+    <v-row class="topRow"></v-row>
     <v-row class="text-center">
       <v-col cols="4"></v-col>
       <v-col cols="4">
+        <v-row class="text-center">
+          <h1>Create New Account</h1>
+        </v-row>
         <v-row class="text-center">
           <v-text-field label="Email" v-model="email" :rules="[rules.required]"></v-text-field>
         </v-row>
@@ -117,3 +121,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.topRow {
+  min-height: 50px;
+}
+</style>

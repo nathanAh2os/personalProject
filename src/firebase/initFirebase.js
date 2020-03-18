@@ -23,10 +23,7 @@ var firebaseConfig = {
     measurementId: "G-W7SP45H3YX"
 };
 // Initialize Firebase
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-
-var fb = firebaseApp.firestore();
+firebase.initializeApp(firebaseConfig);
+var fb = firebase.firestore();
 
 export default fb;
-
-

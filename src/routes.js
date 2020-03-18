@@ -7,6 +7,11 @@ import newAccount from './components/newAccount';
 import login from './components/login';
 import homepage from './components/homepage';
 import chanceCalculator from './components/chanceCalculator';
+import createProject from './components/createProject';
+import recordProjectData from './components/recordProjectData';
+import viewProject from './components/viewProject';
+import editProject from './components/editProject';
+import tftStats from './components/tftStats';
 
 Vue.use(VueRouter);
 
@@ -14,7 +19,12 @@ const routes = [
     { path: '/', component: login },
     { path: '/newAccount', component: newAccount },
     { path: '/homepage', component: homepage },
-    { path: '/chanceCalculator', component: chanceCalculator }
+    { path: '/chanceCalculator', component: chanceCalculator },
+    { path: '/createProject', component: createProject },
+    { path: '/recordProjectData', component: recordProjectData },
+    { path: '/viewProject', component: viewProject },
+    { path: '/editProject', component: editProject },
+    { path: '/tftStats', component: tftStats }
 ];
 
 const router = new VueRouter({

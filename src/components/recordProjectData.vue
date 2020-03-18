@@ -1,10 +1,5 @@
 <template>
   <v-container>
-    <v-row class="text-center">
-      <v-col>
-        <h1 class="display-2 font-weight-bold mb-3">Welcome, {{currentUser}}</h1>
-      </v-col>
-    </v-row>
     <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="snackbar.timeout">
       {{ snackbar.text }}
       <v-btn text @click="snackbar.show = false">Close</v-btn>

@@ -5,7 +5,13 @@
         <v-col cols="4"></v-col>
         <v-col cols="4">
           <v-row class="text-center">
+            <h1>Login</h1>
+          </v-row>
+          <v-row class="text-center">
             <v-text-field label="Email" v-model="email"></v-text-field>
+          </v-row>
+          <v-row class="text-center">
+            <v-text-field label="Username" v-model="username"></v-text-field>
           </v-row>
           <v-row class="text-center">
             <v-text-field
@@ -18,7 +24,7 @@
           </v-row>
           <v-row class="text-center">
             <v-btn left tile @click="createNewAccount">New User?</v-btn>
-            <v-btn right v-on:keydown.enter="authenticateLogin" @click="authenticateLogin">
+            <v-btn right @click="authenticateLogin">
               <v-icon>mdi-login-variant</v-icon>
             </v-btn>
           </v-row>
@@ -46,7 +52,6 @@ export default {
       email: "",
       username: "",
       password: "",
-      currentUser: null,
       snackbar: {
         show: false,
         text: "",
@@ -65,9 +70,8 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(currentUser => {
-          currentUser = this.username;
-          store.state.currentUser = currentUser;
-          console.log("Successfully authenticated user!");
+          currentUser.displayName = this.username;
+          store.state.currentUser = currentUser.displayName;
           this.$router.push("homepage");
         })
         .catch(error => {
