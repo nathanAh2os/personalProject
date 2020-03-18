@@ -1,5 +1,9 @@
 NOTE -- ./src is where you will find most of my written code, at least for now...
-1) Better spacing/alignment
+
+Technologies used include: Vue.js, Firebase, Vuetify, Node.js, VueRouter, Acorn, and more!
+
+Things to work on:
+1) Expand collections in firebase to include more information
 
 2) Render Side Menu on App.js with bool (put in store.js) to show/hide depending on which route/component rendered
 
