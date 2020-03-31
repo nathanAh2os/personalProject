@@ -30,8 +30,11 @@
             <v-list-item @click="routeChanceCalculator">
               <v-icon>mdi-calculator</v-icon>Champ Reroll Chances
             </v-list-item>
-            <v-list-item @click="routeTFTStats">
-              <v-icon>mdi-calculator</v-icon>TFT Stats
+            <v-list-item @click="routeRecordTFTStats">
+              <v-icon>mdi-calculator</v-icon>Record TFT Stats
+            </v-list-item>
+            <v-list-item @click="routeViewTFTStats">
+              <v-icon>mdi-calculator</v-icon>View TFT Stats
             </v-list-item>
             <v-list-item @click="routeCreateProject">
               <v-icon>mdi-hammer-wrench</v-icon>Create Project
@@ -105,8 +108,11 @@ export default {
     routeEditProject() {
       this.$router.push("editProject");
     },
-    routeTFTStats() {
-      this.$router.push("tftStats");
+    routeRecordTFTStats() {
+      this.$router.push("recordTFTStats");
+    },
+    routeViewTFTStats() {
+      this.$router.push("viewTFTStats");
     }
   }
 };

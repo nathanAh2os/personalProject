@@ -11,7 +11,8 @@ import createProject from './components/createProject';
 import recordProjectData from './components/recordProjectData';
 import viewProject from './components/viewProject';
 import editProject from './components/editProject';
-import tftStats from './components/tftStats';
+import recordTFTStats from './components/recordTFTStats';
+import viewTFTStats from './components/viewTFTStats';
 
 Vue.use(VueRouter);
 
@@ -24,7 +25,8 @@ const routes = [
     { path: '/recordProjectData', component: recordProjectData },
     { path: '/viewProject', component: viewProject },
     { path: '/editProject', component: editProject },
-    { path: '/tftStats', component: tftStats }
+    { path: '/recordTFTStats', component: recordTFTStats },
+    { path: '/viewTFTStats', component: viewTFTStats }
 ];
 
 const router = new VueRouter({

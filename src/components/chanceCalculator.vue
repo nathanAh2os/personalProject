@@ -1,19 +1,6 @@
 <template>
   <v-container>
-    <v-app-bar app color="primary" dark>
-      <v-img
-        alt="Vuetify Logo"
-        class="shrink mr-2"
-        contain
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-        transition="scale-transition"
-        width="40"
-      />
-      <v-row>
-        <h1 class="display-1 font-weight-bold ml-4 mt-2">TFT Tracker</h1>
-      </v-row>
-    </v-app-bar>
-    <v-row class="mt-12">
+    <v-row>
       <v-col>
         <v-row>
           <h1 class="display-1 font-weight-bold">Champion Chance Calculator*</h1>
@@ -144,6 +131,7 @@ export default {
   },
   created() {
     store.state.showSignOut = true;
+    store.state.showMenu = true;
   },
   methods: {
     checkChampionString() {
