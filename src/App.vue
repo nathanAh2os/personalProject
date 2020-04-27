@@ -22,7 +22,7 @@
     </v-row>
     <v-row>
       <v-col cols="3" class="mt-14 ml-0 menu" v-if="showMenu">
-        <v-list rounded color="rgba(3, 236, 252, 0.2)">
+        <v-list rounded color="rgba(3, 236, 252, 0.2)" class="mt-4">
           <v-subheader>
             <strong>OPTIONS</strong>
           </v-subheader>
@@ -35,6 +35,9 @@
             </v-list-item>
             <v-list-item @click="routeViewTFTStats">
               <v-icon>mdi-calculator</v-icon>View TFT Stats
+            </v-list-item>
+            <v-list-item @click="routeBuild">
+              <v-icon>mdi-calculator</v-icon>Build Circle
             </v-list-item>
             <v-list-item @click="routeCreateProject">
               <v-icon>mdi-hammer-wrench</v-icon>Create Project
@@ -113,6 +116,9 @@ export default {
     },
     routeViewTFTStats() {
       this.$router.push("viewTFTStats");
+    },
+    routeBuild() {
+      this.$router.push("build");
     }
   }
 };

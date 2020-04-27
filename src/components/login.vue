@@ -20,6 +20,7 @@
               :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
               :type="show1 ? 'text': 'password'"
               @click:append="show1 = !show1"
+              v-on:keyup.enter.exact="authenticateLogin"
             ></v-text-field>
           </v-row>
           <v-row class="text-center">

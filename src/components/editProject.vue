@@ -1,5 +1,8 @@
 <template>
   <v-container>
+    <div>
+      <h1>UNDER CONSTRUCTION</h1>
+    </div>
     <v-snackbar v-model="snackbar.show" :color="snackbar.color" :timeout="snackbar.timeout">
       {{ snackbar.text }}
       <v-btn text @click="snackbar.show = false">Close</v-btn>

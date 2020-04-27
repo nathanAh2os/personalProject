@@ -13,6 +13,7 @@ import viewProject from './components/viewProject';
 import editProject from './components/editProject';
 import recordTFTStats from './components/recordTFTStats';
 import viewTFTStats from './components/viewTFTStats';
+import build from './components/build';
 
 Vue.use(VueRouter);
 
@@ -26,7 +27,8 @@ const routes = [
     { path: '/viewProject', component: viewProject },
     { path: '/editProject', component: editProject },
     { path: '/recordTFTStats', component: recordTFTStats },
-    { path: '/viewTFTStats', component: viewTFTStats }
+    { path: '/viewTFTStats', component: viewTFTStats },
+    { path: '/build', component: build }
 ];
 
 const router = new VueRouter({
